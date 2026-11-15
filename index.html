@@ -1,0 +1,2137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#064d2d">
+<meta name="description" content="CS LA LUMIÈRE : établissement scolaire à Kolwezi, Lualaba, RDC.">
+<title>CS LA LUMIÈRE | Unis • Engagés • Avenir</title>
+
+<style>
+:root{
+--green:#087443;
+--deep:#064d2d;
+--dark:#033b24;
+--gold:#f4c400;
+--pale:#eaf7ef;
+--white:#fff;
+--text:#263238;
+--shadow:0 8px 25px rgba(0,0,0,.12);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f7f5;
+color:var(--text);
+line-height:1.6;
+}
+button,input,select,textarea{font:inherit}
+button,a{cursor:pointer}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+
+/* EN-TÊTE */
+
+header{
+position:sticky;
+top:0;
+width:100%;
+z-index:9999;
+background:var(--dark);
+color:white;
+box-shadow:0 3px 12px rgba(0,0,0,.2);
+overflow:visible;
+isolation:isolate;
+}
+
+.header-video{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:0;
+pointer-events:none;
+}
+
+.header-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(
+120deg,
+rgba(3,59,36,.88),
+rgba(6,77,45,.78),
+rgba(0,0,0,.75)
+);
+z-index:1;
+pointer-events:none;
+}
+
+.header-inner{
+position:relative;
+z-index:2;
+max-width:1200px;
+margin:auto;
+padding:12px 20px;
+min-height:76px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:12px;
+flex-shrink:0;
+}
+
+.brand img{
+width:52px;
+height:52px;
+object-fit:contain;
+}
+
+.brand h1{
+font-size:19px;
+line-height:1.2;
+}
+
+.brand small{
+color:var(--gold);
+font-size:11px;
+}
+
+nav{
+display:flex;
+align-items:center;
+gap:15px;
+flex-wrap:wrap;
+}
+
+nav a{
+font-size:13px;
+font-weight:bold;
+color:white;
+transition:.3s;
+}
+
+nav a:hover{color:var(--gold)}
+
+.menu-btn{
+display:none;
+position:relative;
+z-index:10002;
+border:1px solid #ffffff66;
+background:var(--gold);
+color:var(--dark);
+padding:9px 14px;
+border-radius:7px;
+font-weight:bold;
+cursor:pointer;
+}
+
+@media(max-width:850px){
+
+.header-inner{flex-wrap:wrap}
+
+.menu-btn{display:block}
+
+nav{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+width:100%;
+background:rgba(3,59,36,.98);
+padding:20px;
+flex-direction:column;
+align-items:flex-start;
+gap:15px;
+z-index:10001;
+box-shadow:0 8px 15px rgba(0,0,0,.3);
+border-top:2px solid var(--gold);
+}
+
+nav.open{display:flex!important}
+
+nav a{
+display:block;
+width:100%;
+padding:8px 5px;
+font-size:15px;
+border-bottom:1px solid #ffffff25;
+}
+}
+
+/* BANNIÈRE */
+
+.hero{
+position:relative;
+min-height:520px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+padding:60px 20px;
+overflow:hidden;
+background:#033b24;
+isolation:isolate;
+}
+
+.hero-video{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:0;
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(
+120deg,
+rgba(3,59,36,.65),
+rgba(6,77,45,.45),
+rgba(0,0,0,.65)
+);
+z-index:1;
+pointer-events:none;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+max-width:900px;
+width:100%;
+animation:apparition 1.5s ease;
+}
+
+.hero-logo{
+width:115px;
+height:115px;
+object-fit:contain;
+margin-bottom:15px;
+filter:drop-shadow(0 5px 12px rgba(0,0,0,.5));
+animation:logoAnimation 4s ease-in-out infinite;
+}
+
+.hero-title{
+font-size:clamp(35px,6vw,65px);
+font-weight:900;
+color:white;
+text-shadow:0 4px 15px #000;
+letter-spacing:3px;
+margin-bottom:12px;
+}
+
+.slogan-animation{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-wrap:wrap;
+gap:12px;
+margin:25px 0;
+font-size:clamp(22px,4vw,38px);
+font-weight:900;
+letter-spacing:3px;
+color:#f4c400;
+text-shadow:0 3px 12px #000;
+animation:sloganApparition 2s ease-in-out;
+}
+
+.slogan-animation span{
+display:inline-block;
+animation:sloganPulse 3s ease-in-out infinite;
+}
+
+.slogan-animation span:nth-child(3){animation-delay:.4s}
+.slogan-animation span:nth-child(5){animation-delay:.8s}
+.slogan-animation .separator{color:white}
+
+.hero p{
+font-size:18px;
+margin-bottom:15px;
+}
+
+.hero-location{
+font-weight:bold;
+letter-spacing:2px;
+}
+
+.hero-buttons{margin-top:25px}
+
+@keyframes apparition{
+from{opacity:0;transform:translateY(35px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes logoAnimation{
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.08)}
+}
+
+@keyframes sloganApparition{
+from{opacity:0;transform:scale(.7)}
+to{opacity:1;transform:scale(1)}
+}
+
+@keyframes sloganPulse{
+0%,100%{transform:scale(1)}
+50%{transform:scale(1.08)}
+}
+
+/* ÉLÉMENTS GÉNÉRAUX */
+
+.container{
+width:min(1150px,92%);
+margin:auto;
+}
+
+section.content-section{padding:60px 0}
+
+.section-title{
+text-align:center;
+margin-bottom:30px;
+}
+
+.section-title h2{
+font-size:30px;
+color:var(--deep);
+}
+
+.section-title p{color:#667}
+
+.btn{
+display:inline-block;
+background:var(--gold);
+color:var(--dark);
+padding:12px 20px;
+border:0;
+border-radius:7px;
+font-weight:bold;
+margin:5px;
+}
+
+.btn:hover{
+filter:brightness(.94);
+transform:translateY(-1px);
+}
+
+.btn-green{
+background:var(--green);
+color:white;
+}
+
+.btn-outline{
+background:transparent;
+color:white;
+border:2px solid white;
+}
+
+.card{
+background:white;
+border-radius:12px;
+padding:22px;
+box-shadow:var(--shadow);
+margin-bottom:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.card h3{
+color:var(--deep);
+margin-bottom:10px;
+}
+
+.info-card{
+text-align:center;
+border-top:4px solid var(--gold);
+}
+
+.info-card strong{
+display:block;
+font-size:28px;
+color:var(--green);
+}
+
+form{display:grid;gap:13px}
+
+label{
+font-weight:bold;
+font-size:14px;
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+border:1px solid #ccd5ce;
+border-radius:7px;
+background:white;
+}
+
+textarea{
+min-height:100px;
+resize:vertical;
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+.form-group{
+display:grid;
+gap:6px;
+}
+
+.notice{
+background:#fff8dc;
+border-left:4px solid var(--gold);
+padding:12px;
+border-radius:5px;
+margin:12px 0;
+font-size:14px;
+}
+
+.hidden{display:none!important}
+
+/* À PROPOS */
+
+.about-box{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+align-items:center;
+}
+
+.about-box img{
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:12px;
+}
+
+/* GALERIE */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+}
+
+.gallery-item{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:var(--shadow);
+}
+
+.gallery-item img,
+.gallery-item video{
+width:100%;
+height:220px;
+object-fit:cover;
+display:block;
+}
+
+.gallery-item p{
+padding:12px;
+font-weight:bold;
+color:var(--deep);
+}
+
+.video-fullscreen{
+position:fixed;
+inset:0;
+background:#000e;
+z-index:30000;
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+}
+
+.video-fullscreen video{
+max-width:100%;
+max-height:85vh;
+}
+
+.video-fullscreen button{
+position:absolute;
+top:20px;
+right:20px;
+}
+
+/* TABLEAUX */
+
+.table-wrap{overflow-x:auto}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:white;
+}
+
+th,td{
+padding:11px;
+border:1px solid #dce5df;
+text-align:left;
+}
+
+th{
+background:var(--deep);
+color:white;
+}
+
+tr:nth-child(even){background:#f2f8f4}
+
+.result-photo{
+width:65px;
+height:65px;
+object-fit:cover;
+border-radius:50%;
+}
+
+.badge{
+display:inline-block;
+padding:5px 10px;
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+}
+
+.admis{
+background:#d8f5df;
+color:#087443;
+}
+
+.echec{
+background:#ffe0e0;
+color:#a00;
+}
+
+/* BULLETIN */
+
+.bulletin{
+background:white;
+border:2px solid var(--deep);
+padding:25px;
+margin-top:20px;
+}
+
+.bulletin-header{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+border-bottom:3px solid var(--gold);
+padding-bottom:15px;
+}
+
+.bulletin-header img{
+width:80px;
+height:80px;
+object-fit:contain;
+}
+
+.bulletin h3{
+text-align:center;
+color:var(--deep);
+margin:15px;
+}
+
+.bulletin-student{
+display:flex;
+gap:20px;
+align-items:center;
+margin:15px 0;
+}
+
+.bulletin-student img{
+width:90px;
+height:100px;
+object-fit:cover;
+border:2px solid var(--deep);
+}
+
+.bulletin-summary{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:10px;
+margin-top:15px;
+}
+
+.summary-box{
+background:var(--pale);
+padding:12px;
+text-align:center;
+border-radius:7px;
+}
+
+.summary-box strong{
+display:block;
+color:var(--deep);
+font-size:20px;
+}
+
+/* COMMUNIQUÉS */
+
+.communique-section{
+background:#f4f7f5;
+}
+
+.communique-filters{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:25px;
+}
+
+.filter-btn{
+background:white;
+color:var(--deep);
+border:1px solid var(--green);
+padding:10px 17px;
+border-radius:25px;
+font-weight:bold;
+transition:.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+background:var(--green);
+color:white;
+}
+
+.communique-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.communique-card{
+background:white;
+border-radius:12px;
+padding:22px;
+box-shadow:var(--shadow);
+border-left:5px solid var(--green);
+transition:.3s;
+}
+
+.communique-card:hover{
+transform:translateY(-3px);
+}
+
+.communique-card.urgent{
+border-left-color:#dc3545;
+}
+
+.communique-card h3{
+color:var(--deep);
+margin:12px 0;
+}
+
+.communique-card p{
+margin-bottom:12px;
+}
+
+.communique-date{
+font-size:12px;
+color:#777;
+}
+
+.communique-type{
+display:inline-block;
+padding:5px 12px;
+background:#eaf7ef;
+color:var(--green);
+border-radius:20px;
+font-size:12px;
+font-weight:bold;
+}
+
+.communique-card.urgent .communique-type{
+background:#ffe5e5;
+color:#b00020;
+}
+
+/* FOOTER */
+
+footer{
+background:var(--dark);
+color:white;
+text-align:center;
+padding:30px 15px;
+}
+
+footer strong{color:var(--gold)}
+footer a{color:var(--gold)}
+
+/* RESPONSIVE */
+
+@media(max-width:850px){
+.grid,.gallery{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:600px){
+
+.hero{min-height:450px}
+.hero-logo{width:90px;height:90px}
+.hero p{font-size:15px}
+
+.slogan-animation{
+gap:7px;
+letter-spacing:1px;
+}
+
+.grid,.gallery,.about-box,.form-grid{
+grid-template-columns:1fr;
+}
+
+.communique-grid{
+grid-template-columns:1fr;
+}
+
+.brand h1{font-size:15px}
+.section-title h2{font-size:24px}
+
+.bulletin-header{flex-direction:column}
+.bulletin-summary{grid-template-columns:1fr}
+.bulletin-student{flex-wrap:wrap}
+}
+
+@media(prefers-reduced-motion:reduce){
+.hero-content,.hero-logo,.slogan-animation,
+.slogan-animation span{animation:none}
+html{scroll-behavior:auto}
+}
+
+/* ==========================================
+   IMPRESSION : BULLETIN UNIQUEMENT
+========================================== */
+
+@media print {
+
+    @page {
+        size: A4 portrait;
+        margin: 10mm;
+    }
+
+    html,body {
+        background: white !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        min-height: 0 !important;
+    }
+
+    body * {
+        visibility: hidden !important;
+    }
+
+    #bulletinResultat,
+    #bulletinResultat .bulletin,
+    #bulletinResultat .bulletin * {
+        visibility: visible !important;
+    }
+
+    #bulletinResultat {
+        display: block !important;
+        position: absolute !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #bulletinResultat .bulletin {
+        position: relative !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 15px !important;
+        border: 2px solid #064d2d !important;
+        box-shadow: none !important;
+        background: white !important;
+        color: #263238 !important;
+        break-inside: avoid;
+    }
+
+    #bulletinResultat button,
+    #bulletinResultat .no-print {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    #bulletinResultat table {
+        width: 100% !important;
+        border-collapse: collapse !important;
+    }
+
+    #bulletinResultat th {
+        background: #064d2d !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    #bulletinResultat td,
+    #bulletinResultat th {
+        border: 1px solid #333 !important;
+        padding: 8px !important;
+    }
+
+    #bulletinResultat .summary-box {
+        background: #eaf7ef !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    #bulletinResultat .admis {
+        background: #d8f5df !important;
+        color: #087443 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    #bulletinResultat .echec {
+        background: #ffe0e0 !important;
+        color: #a00 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    #bulletinResultat tr {
+        break-inside: avoid;
+    }
+
+    #bulletinResultat img {
+        max-width: 100%;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- EN-TÊTE -->
+
+<header>
+
+<video class="header-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+<source src="8b33580a133bcb290844c65e471a88ee.mp4" type="video/mp4">
+</video>
+
+<div class="header-overlay"></div>
+
+<div class="header-inner">
+
+<a href="#accueil" class="brand">
+<img src="IMG-20261110-WA7472.jpg" alt="Logo CS LA LUMIÈRE">
+<div>
+<h1>CS LA LUMIÈRE</h1>
+<small>UNIS • ENGAGÉS • AVENIR</small>
+</div>
+</a>
+
+<button type="button" class="menu-btn"
+id="menuButton"
+aria-label="Ouvrir le menu"
+aria-expanded="false"
+aria-controls="mainNav"
+onclick="toggleMenu()">
+☰ MENU
+</button>
+
+<nav id="mainNav">
+
+<a href="#accueil" onclick="closeMenu()">Accueil</a>
+<a href="#apropos" onclick="closeMenu()">À propos</a>
+<a href="#activites" onclick="closeMenu()">Activités</a>
+<a href="#communiques" onclick="closeMenu()">📢 Communiqués</a>
+<a href="#galerie" onclick="closeMenu()">Galerie</a>
+<a href="#inscription" onclick="closeMenu()">Inscription</a>
+<a href="#consultation" onclick="closeMenu()">Résultats</a>
+<a href="#contact" onclick="closeMenu()">Contact</a>
+
+</nav>
+</div>
+</header>
+
+<!-- ACCUEIL -->
+
+<section class="hero" id="accueil">
+
+<video class="hero-video" autoplay muted loop playsinline preload="auto">
+<source src="8b33580a133bcb290844c65e471a88ee.mp4" type="video/mp4">
+Votre navigateur ne prend pas en charge les vidéos.
+</video>
+
+<div class="hero-overlay"></div>
+
+<div class="hero-content">
+
+<img src="IMG-20261110-WA7472.jpg" alt="Logo CS LA LUMIÈRE" class="hero-logo">
+
+<h1 class="hero-title">CS LA LUMIÈRE</h1>
+
+<div class="slogan-animation">
+<span>UNIS</span>
+<span class="separator">•</span>
+<span>ENGAGÉS</span>
+<span class="separator">•</span>
+<span>AVENIR</span>
+</div>
+
+<p>Former aujourd'hui les responsables de demain.</p>
+
+<p class="hero-location">
+KOLWEZI • LUALABA • RÉPUBLIQUE DÉMOCRATIQUE DU CONGO
+</p>
+
+<div class="hero-buttons">
+<a href="#inscription" class="btn">Inscrire un élève</a>
+<a href="#consultation" class="btn btn-outline">Consulter les résultats</a>
+</div>
+
+</div>
+</section>
+
+<!-- PRÉSENTATION -->
+
+<section class="content-section" id="apropos">
+<div class="container">
+
+<div class="section-title">
+<h2>À propos de notre école</h2>
+<p>Une éducation de qualité pour construire l'avenir.</p>
+</div>
+
+<div class="about-box">
+
+<div>
+<h3>CS LA LUMIÈRE</h3>
+
+<p>
+Le CS LA LUMIÈRE est un établissement scolaire situé à Kolwezi,
+dans la province du Lualaba, en République démocratique du Congo.
+Notre mission est de former des élèves responsables, disciplinés,
+compétents et capables de contribuer au développement de la société.
+</p>
+
+<br>
+
+<p><strong>Notre devise :</strong> Unis • Engagés • Avenir</p>
+<p><strong>Année scolaire :</strong> 2026-2027</p>
+<p><strong>Localisation :</strong> Kolwezi, Lualaba, RDC</p>
+</div>
+
+<img src="IMG-20261115-WA6184.jpg" alt="Activité scolaire">
+
+</div>
+</div>
+</section>
+
+<!-- ENGAGEMENT -->
+
+<section class="content-section" style="background:#eaf7ef">
+<div class="container">
+
+<div class="section-title">
+<h2>Notre engagement</h2>
+</div>
+
+<div class="grid">
+
+<div class="card info-card">
+<strong>01</strong>
+<h3>Excellence</h3>
+<p>Encourager chaque élève à développer son potentiel.</p>
+</div>
+
+<div class="card info-card">
+<strong>02</strong>
+<h3>Discipline</h3>
+<p>Promouvoir le respect, le travail et la responsabilité.</p>
+</div>
+
+<div class="card info-card">
+<strong>03</strong>
+<h3>Avenir</h3>
+<p>Préparer les élèves à relever les défis de demain.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- ACTIVITÉS -->
+
+<section class="content-section" id="activites">
+<div class="container">
+
+<div class="section-title">
+<h2>Activités scolaires</h2>
+<p>Découvrez les moments importants de la vie de notre établissement.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Apprentissage</h3>
+<p>Des activités pédagogiques pour renforcer les connaissances des élèves.</p>
+</div>
+
+<div class="card">
+<h3>Sport et culture</h3>
+<p>Des activités qui développent l'esprit d'équipe et la créativité.</p>
+</div>
+
+<div class="card">
+<h3>Vie scolaire</h3>
+<p>Des moments de partage, de discipline et de participation.</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- COMMUNIQUÉS OFFICIELS -->
+
+<section class="content-section communique-section" id="communiques">
+
+<div class="container">
+
+<div class="section-title">
+<h2>📢 COMMUNIQUÉS OFFICIELS</h2>
+<p>
+Toutes les communications et annonces importantes
+du CS LA LUMIÈRE.
+</p>
+</div>
+
+<div class="communique-filters">
+
+<button type="button" class="filter-btn active"
+onclick="filtrerCommuniques('tous',this)">
+Tous
+</button>
+
+<button type="button" class="filter-btn"
+onclick="filtrerCommuniques('direction',this)">
+Direction
+</button>
+
+<button type="button" class="filter-btn"
+onclick="filtrerCommuniques('parents',this)">
+Parents
+</button>
+
+<button type="button" class="filter-btn"
+onclick="filtrerCommuniques('eleves',this)">
+Élèves
+</button>
+
+<button type="button" class="filter-btn"
+onclick="filtrerCommuniques('examens',this)">
+Examens
+</button>
+
+<button type="button" class="filter-btn"
+onclick="filtrerCommuniques('evenements',this)">
+Événements
+</button>
+
+</div>
+
+<div class="communique-grid" id="communiqueGrid">
+
+<article class="communique-card urgent" data-category="direction">
+
+<span class="communique-type">DIRECTION</span>
+
+<h3>Communication officielle</h3>
+
+<p>
+La direction du CS LA LUMIÈRE informe les parents,
+les élèves et les enseignants que cet espace est réservé
+aux communications officielles de l'établissement.
+</p>
+
+<span class="communique-date">Année scolaire 2026-2027</span>
+
+</article>
+
+<article class="communique-card" data-category="parents">
+
+<span class="communique-type">PARENTS</span>
+
+<h3>Information aux parents</h3>
+
+<p>
+Les parents sont invités à suivre régulièrement
+les communications de l'établissement concernant
+le suivi scolaire de leurs enfants.
+</p>
+
+<span class="communique-date">CS LA LUMIÈRE</span>
+
+</article>
+
+<article class="communique-card" data-category="eleves">
+
+<span class="communique-type">ÉLÈVES</span>
+
+<h3>Information aux élèves</h3>
+
+<p>
+Les élèves sont invités à respecter les consignes
+de l'établissement et à rester attentifs aux annonces
+de leurs enseignants.
+</p>
+
+<span class="communique-date">CS LA LUMIÈRE</span>
+
+</article>
+
+<article class="communique-card" data-category="examens">
+
+<span class="communique-type">EXAMENS</span>
+
+<h3>Informations sur les évaluations</h3>
+
+<p>
+Les informations concernant les évaluations,
+les examens et les résultats scolaires seront
+communiquées dans cet espace.
+</p>
+
+<span class="communique-date">Année scolaire 2026-2027</span>
+
+</article>
+
+<article class="communique-card" data-category="evenements">
+
+<span class="communique-type">ÉVÉNEMENTS</span>
+
+<h3>Activités scolaires</h3>
+
+<p>
+Retrouvez ici les annonces concernant les cérémonies,
+les activités sportives et les événements culturels
+de notre établissement.
+</p>
+
+<span class="communique-date">CS LA LUMIÈRE</span>
+
+</article>
+
+</div>
+</div>
+</section>
+
+<!-- GALERIE -->
+
+<section class="content-section" id="galerie" style="background:#eaf7ef">
+<div class="container">
+
+<div class="section-title">
+<h2>Galerie photos et vidéos</h2>
+<p>Quelques souvenirs de nos activités scolaires.</p>
+</div>
+
+<div class="gallery">
+
+<div class="gallery-item">
+<img src="IMG-20261115-WA6184.jpg" alt="Activité scolaire">
+<p>Activité scolaire</p>
+</div>
+
+<div class="gallery-item">
+<img src="IMG-20261115-WA8640.jpg" alt="Élève">
+<p>Vie scolaire</p>
+</div>
+
+<div class="gallery-item">
+<img src="IMG-20261115-WA4278.jpg" alt="Activité">
+<p>Activité éducative</p>
+</div>
+
+<div class="gallery-item">
+<img src="IMG-20261115-WA5009.jpg" alt="Souvenir scolaire">
+<p>Souvenir scolaire</p>
+</div>
+
+<div class="gallery-item">
+<video controls onclick="openVideo(this)">
+<source src="VID-1.mp4" type="video/mp4">
+</video>
+<p>Vidéo scolaire</p>
+</div>
+
+<div class="gallery-item">
+<video controls onclick="openVideo(this)">
+<source src="8b33580a133bcb290844c65e471a88ee.mp4" type="video/mp4">
+</video>
+<p>Activités de l'école</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<div class="video-fullscreen" id="videoFullscreen">
+<button class="btn" onclick="closeVideo()">Fermer ✕</button>
+<video id="fullscreenVideo" controls autoplay></video>
+</div>
+
+<!-- INSCRIPTION -->
+
+<section class="content-section" id="inscription">
+<div class="container">
+
+<div class="section-title">
+<h2>Inscription d'un élève</h2>
+<p>Remplissez les informations pour préparer la fiche d'inscription.</p>
+</div>
+
+<div class="card">
+
+<form id="inscriptionForm">
+
+<div class="form-grid">
+
+<div class="form-group">
+<label for="nom">Nom</label>
+<input id="nom" required>
+</div>
+
+<div class="form-group">
+<label for="postnom">Postnom</label>
+<input id="postnom" required>
+</div>
+
+<div class="form-group">
+<label for="prenom">Prénom</label>
+<input id="prenom" required>
+</div>
+
+<div class="form-group">
+<label for="sexe">Sexe</label>
+<select id="sexe" required>
+<option value="">Choisir</option>
+<option>Masculin</option>
+<option>Féminin</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="naissance">Date de naissance</label>
+<input type="date" id="naissance" required>
+</div>
+
+<div class="form-group">
+<label for="classeInscription">Classe demandée</label>
+<select id="classeInscription" required></select>
+</div>
+
+<div class="form-group">
+<label for="nomParent">Nom du parent ou tuteur</label>
+<input id="nomParent" required>
+</div>
+
+<div class="form-group">
+<label for="telephoneParent">Téléphone du parent</label>
+<input id="telephoneParent" type="tel" required>
+</div>
+
+<div class="form-group">
+<label for="adresse">Adresse</label>
+<input id="adresse">
+</div>
+
+<div class="form-group">
+<label for="photoEleve">Photo de l'élève</label>
+<input id="photoEleve" type="file" accept="image/*" required>
+</div>
+
+</div>
+
+<div>
+<img id="apercuPhoto" alt="Aperçu de la photo"
+style="width:120px;height:130px;object-fit:cover;display:none;border:2px solid #087443;border-radius:8px">
+</div>
+
+<button class="btn btn-green" type="submit">
+Générer la fiche d'inscription
+</button>
+
+</form>
+
+<div id="ficheResultat" class="hidden">
+
+<div id="ficheCanvas" class="card" style="border:2px solid #064d2d">
+
+<div style="text-align:center">
+<img src="z.png" alt="Logo" style="width:85px;height:85px;object-fit:contain">
+<h2 style="color:#064d2d">CS LA LUMIÈRE</h2>
+<h3>FICHE D'INSCRIPTION 2026-2027</h3>
+<p>Kolwezi • Lualaba • RDC</p>
+</div>
+
+<hr style="margin:15px 0">
+
+<div style="display:flex;gap:20px;align-items:center">
+<img id="fichePhoto" alt="Photo de l'élève"
+style="width:120px;height:140px;object-fit:cover;border:2px solid #064d2d">
+<div id="ficheIdentite"></div>
+</div>
+
+<hr style="margin:15px 0">
+
+<div id="ficheDetails"></div>
+
+<p style="margin-top:40px">Signature du parent : ____________________</p>
+<p style="margin-top:25px">Signature de l'administration : ____________________</p>
+
+</div>
+
+<button class="btn btn-green" onclick="telechargerFiche()">
+Télécharger la fiche JPG
+</button>
+
+<button class="btn" onclick="envoyerInscriptionWhatsApp()">
+Envoyer les informations par WhatsApp
+</button>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONSULTATION DES RÉSULTATS -->
+
+<section class="content-section" id="consultation" style="background:#eaf7ef">
+<div class="container">
+
+<div class="section-title">
+<h2>Consultation des résultats</h2>
+<p>Les parents peuvent consulter le bulletin de leur enfant.</p>
+</div>
+
+<div class="card">
+
+<form id="rechercheForm">
+
+<div class="form-grid">
+
+<div class="form-group">
+<label for="matriculeRecherche">Matricule de l'élève</label>
+<input id="matriculeRecherche" placeholder="Ex : LUM-001" required>
+</div>
+
+<div class="form-group">
+<label for="codeRecherche">Code de consultation</label>
+<input id="codeRecherche" type="password" placeholder="Code confidentiel" required>
+</div>
+
+</div>
+
+<button class="btn btn-green" type="submit">
+Consulter le bulletin
+</button>
+
+</form>
+
+<div id="messageRecherche" class="notice hidden"></div>
+<div id="bulletinResultat"></div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="content-section" id="contact">
+<div class="container">
+
+<div class="section-title">
+<h2>Contactez-nous</h2>
+<p>Pour toute information concernant l'établissement.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Notre établissement</h3>
+<p><strong>Nom :</strong> CS LA LUMIÈRE</p>
+<p><strong>Ville :</strong> Kolwezi</p>
+<p><strong>Province :</strong> Lualaba</p>
+<p><strong>Pays :</strong> RDC</p>
+</div>
+
+<div class="card">
+<h3>WhatsApp</h3>
+<p>Contactez-nous directement pour toute demande d'information.</p>
+<a class="btn btn-green" target="_blank" rel="noopener"
+href="https://wa.me/243978644833">
+Contacter sur WhatsApp
+</a>
+</div>
+
+<div class="card">
+<h3>Année scolaire</h3>
+<p>Année scolaire 2026-2027</p>
+<p>Unis • Engagés • Avenir</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<footer>
+<img src="z.png" alt="Logo CS LA LUMIÈRE"
+style="width:65px;height:65px;object-fit:contain">
+<p><strong>CS LA LUMIÈRE</strong></p>
+<p>Unis • Engagés • Avenir</p>
+<p>Kolwezi • Lualaba • RDC</p>
+<p>© 2026 CS LA LUMIÈRE — Tous droits réservés.</p>
+</footer>
+
+<script>
+
+/* MENU */
+
+function toggleMenu(){
+
+const menu=document.getElementById("mainNav");
+const bouton=document.getElementById("menuButton");
+
+if(!menu || !bouton)return;
+
+const ouvert=menu.classList.toggle("open");
+
+bouton.setAttribute("aria-expanded",String(ouvert));
+bouton.innerHTML=ouvert?"✕ FERMER":"☰ MENU";
+
+}
+
+function closeMenu(){
+
+const menu=document.getElementById("mainNav");
+const bouton=document.getElementById("menuButton");
+
+if(!menu || !bouton)return;
+
+menu.classList.remove("open");
+bouton.setAttribute("aria-expanded","false");
+bouton.innerHTML="☰ MENU";
+
+}
+
+document.querySelectorAll("#mainNav a").forEach(lien=>{
+lien.addEventListener("click",closeMenu);
+});
+
+document.addEventListener("keydown",function(e){
+if(e.key==="Escape"){
+closeMenu();
+closeVideo();
+}
+});
+
+window.addEventListener("resize",function(){
+if(window.innerWidth>850){
+closeMenu();
+}
+});
+
+/* FILTRAGE DES COMMUNIQUÉS */
+
+function filtrerCommuniques(categorie,bouton){
+
+const cartes=document.querySelectorAll(".communique-card");
+
+document.querySelectorAll(".filter-btn").forEach(btn=>{
+btn.classList.remove("active");
+});
+
+bouton.classList.add("active");
+
+cartes.forEach(carte=>{
+
+if(categorie==="tous" ||
+carte.dataset.category===categorie){
+
+carte.style.display="block";
+
+}else{
+
+carte.style.display="none";
+
+}
+
+});
+
+}
+
+/* VIDÉO PLEIN ÉCRAN */
+
+function openVideo(video){
+
+const source=video.querySelector("source");
+if(!source)return;
+
+const player=document.getElementById("fullscreenVideo");
+
+player.src=source.src;
+
+document.getElementById("videoFullscreen").style.display="flex";
+
+player.play().catch(()=>{});
+
+}
+
+function closeVideo(){
+
+const player=document.getElementById("fullscreenVideo");
+
+player.pause();
+player.removeAttribute("src");
+player.load();
+
+document.getElementById("videoFullscreen").style.display="none";
+
+}
+
+/* CLASSES */
+
+const classes=[
+"1ère primaire",
+"2ème primaire",
+"3ème primaire",
+"4ème primaire",
+"5ème primaire",
+"6ème primaire",
+"1ère secondaire",
+"2ème secondaire",
+"3ème secondaire",
+"4ème secondaire",
+"5ème secondaire",
+"6ème secondaire"
+];
+
+const classeSelect=document.getElementById("classeInscription");
+
+classes.forEach(classe=>{
+
+const option=document.createElement("option");
+
+option.value=classe;
+option.textContent=classe;
+
+classeSelect.appendChild(option);
+
+});
+
+/* MATIÈRES ET MAXIMUMS PAR CLASSE */
+
+const matieresParClasse={
+
+"1ère primaire":[
+{nom:"Français",max:20},
+{nom:"Mathématiques",max:20},
+{nom:"Éducation à la vie",max:20},
+{nom:"Étude du milieu",max:20},
+{nom:"Éducation artistique",max:20}
+],
+
+"2ème primaire":[
+{nom:"Français",max:20},
+{nom:"Mathématiques",max:20},
+{nom:"Éducation à la vie",max:20},
+{nom:"Étude du milieu",max:20},
+{nom:"Éducation artistique",max:20}
+],
+
+"3ème primaire":[
+{nom:"Français",max:20},
+{nom:"Mathématiques",max:20},
+{nom:"Sciences",max:20},
+{nom:"Étude du milieu",max:20},
+{nom:"Éducation civique et morale",max:20}
+],
+
+"4ème primaire":[
+{nom:"Français",max:20},
+{nom:"Mathématiques",max:20},
+{nom:"Sciences",max:20},
+{nom:"Étude du milieu",max:20},
+{nom:"Éducation civique et morale",max:20}
+],
+
+"5ème primaire":[
+{nom:"Français",max:20},
+{nom:"Mathématiques",max:20},
+{nom:"Sciences",max:20},
+{nom:"Géographie",max:20},
+{nom:"Histoire",max:20},
+{nom:"Éducation civique et morale",max:20}
+],
+
+"6ème primaire":[
+{nom:"Français",max:20},
+{nom:"Mathématiques",max:20},
+{nom:"Sciences",max:20},
+{nom:"Géographie",max:20},
+{nom:"Histoire",max:20},
+{nom:"Éducation civique et morale",max:20}
+],
+
+"1ère secondaire":[
+{nom:"Français",max:20},
+{nom:"Mathématiques",max:20},
+{nom:"Anglais",max:20},
+{nom:"Biologie",max:20},
+{nom:"Chimie",max:20},
+{nom:"Physique",max:20},
+{nom:"Histoire",max:20},
+{nom:"Géographie",max:20},
+{nom:"Informatique",max:20}
+],
+
+"2ème secondaire":[
+{nom:"Français",max:20},
+{nom:"Mathématiques",max:20},
+{nom:"Anglais",max:20},
+{nom:"Biologie",max:20},
+{nom:"Chimie",max:20},
+{nom:"Physique",max:20},
+{nom:"Histoire",max:20},
+{nom:"Géographie",max:20},
+{nom:"Informatique",max:20}
+],
+
+"3ème secondaire":[
+{nom:"Français",max:20},
+{nom:"Mathématiques",max:20},
+{nom:"Anglais",max:20},
+{nom:"Biologie",max:20},
+{nom:"Chimie",max:20},
+{nom:"Physique",max:20},
+{nom:"Histoire",max:20},
+{nom:"Géographie",max:20},
+{nom:"Informatique",max:20}
+],
+
+"4ème secondaire":[
+{nom:"Français",max:20},
+{nom:"Mathématiques",max:20},
+{nom:"Anglais",max:20},
+{nom:"Biologie",max:20},
+{nom:"Chimie",max:20},
+{nom:"Physique",max:20},
+{nom:"Histoire",max:20},
+{nom:"Géographie",max:20},
+{nom:"Informatique",max:20}
+],
+
+"5ème secondaire":[
+{nom:"Français",max:20},
+{nom:"Mathématiques",max:20},
+{nom:"Anglais",max:20},
+{nom:"Biologie",max:20},
+{nom:"Chimie",max:20},
+{nom:"Physique",max:20},
+{nom:"Histoire",max:20},
+{nom:"Géographie",max:20},
+{nom:"Informatique",max:20}
+],
+
+"6ème secondaire":[
+{nom:"Français",max:20},
+{nom:"Mathématiques",max:20},
+{nom:"Anglais",max:20},
+{nom:"Biologie",max:20},
+{nom:"Chimie",max:20},
+{nom:"Physique",max:20},
+{nom:"Histoire",max:20},
+{nom:"Géographie",max:20},
+{nom:"Informatique",max:20}
+]
+
+};
+
+/* ÉLÈVES DE DÉMONSTRATION */
+
+const eleves=[
+
+{
+matricule:"LUM001",
+code:"1234",
+nom:"KAMBA",
+postnom:"MUTOMBO",
+prenom:"Daniel",
+sexe:"Masculin",
+classe:"6ème secondaire",
+photo:"IMG-20260830-WA0005.jpg",
+
+notes:{
+"Français":15,
+"Mathématiques":16,
+"Anglais":14,
+"Biologie":13,
+"Chimie":15,
+"Physique":12,
+"Histoire":16,
+"Géographie":14,
+"Informatique":18
+}
+
+},
+
+{
+matricule:"LUM-002",
+code:"1234",
+nom:"KALALA",
+postnom:"MWAPE",
+prenom:"Sarah",
+sexe:"Féminin",
+classe:"2ème primaire",
+photo:"IMG-20260627-WA0034(1).jpg",
+
+notes:{
+"Français":16,
+"Mathématiques":17,
+"Éducation à la vie":15,
+"Étude du milieu":14,
+"Éducation artistique":18
+}
+
+}
+
+];
+
+/* APERÇU PHOTO */
+
+let photoInscription="";
+
+document.getElementById("photoEleve").addEventListener("change",function(){
+
+const file=this.files[0];
+
+if(!file)return;
+
+const reader=new FileReader();
+
+reader.onload=e=>{
+
+photoInscription=e.target.result;
+
+const preview=document.getElementById("apercuPhoto");
+
+preview.src=photoInscription;
+preview.style.display="block";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+/* GÉNÉRATION FICHE */
+
+let derniereInscription={};
+
+document.getElementById("inscriptionForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+if(!photoInscription){
+alert("Veuillez ajouter la photo de l'élève.");
+return;
+}
+
+const data={
+
+nom:document.getElementById("nom").value.trim(),
+postnom:document.getElementById("postnom").value.trim(),
+prenom:document.getElementById("prenom").value.trim(),
+sexe:document.getElementById("sexe").value,
+naissance:document.getElementById("naissance").value,
+classe:document.getElementById("classeInscription").value,
+parent:document.getElementById("nomParent").value.trim(),
+telephone:document.getElementById("telephoneParent").value.trim(),
+adresse:document.getElementById("adresse").value.trim(),
+photo:photoInscription
+
+};
+
+derniereInscription=data;
+
+document.getElementById("fichePhoto").src=data.photo;
+
+document.getElementById("ficheIdentite").innerHTML=`
+
+<p><strong>Nom :</strong> ${escapeHTML(data.nom)}</p>
+<p><strong>Postnom :</strong> ${escapeHTML(data.postnom)}</p>
+<p><strong>Prénom :</strong> ${escapeHTML(data.prenom)}</p>
+<p><strong>Sexe :</strong> ${escapeHTML(data.sexe)}</p>
+
+`;
+
+document.getElementById("ficheDetails").innerHTML=`
+
+<p><strong>Date de naissance :</strong> ${escapeHTML(data.naissance)}</p>
+<p><strong>Classe demandée :</strong> ${escapeHTML(data.classe)}</p>
+<p><strong>Parent/tuteur :</strong> ${escapeHTML(data.parent)}</p>
+<p><strong>Téléphone :</strong> ${escapeHTML(data.telephone)}</p>
+<p><strong>Adresse :</strong> ${escapeHTML(data.adresse)}</p>
+<p><strong>Année scolaire :</strong> 2026-2027</p>
+
+`;
+
+document.getElementById("ficheResultat").classList.remove("hidden");
+
+document.getElementById("ficheResultat").scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+/* PROTECTION AFFICHAGE HTML */
+
+function escapeHTML(value){
+
+return String(value).replace(/[&<>"']/g,char=>({
+
+"&":"&amp;",
+"<":"&lt;",
+">":"&gt;",
+'"':"&quot;",
+"'":"&#039;"
+
+})[char]);
+
+}
+
+/* EXPORT JPG */
+
+function telechargerFiche(){
+
+const width=1100;
+const height=1500;
+
+const canvas=document.createElement("canvas");
+
+canvas.width=width;
+canvas.height=height;
+
+const ctx=canvas.getContext("2d");
+
+ctx.fillStyle="#ffffff";
+ctx.fillRect(0,0,width,height);
+
+ctx.fillStyle="#064d2d";
+ctx.textAlign="center";
+ctx.font="bold 48px Arial";
+ctx.fillText("CS LA LUMIÈRE",width/2,90);
+
+ctx.fillStyle="#333";
+ctx.font="bold 35px Arial";
+ctx.fillText("FICHE D'INSCRIPTION 2026-2027",width/2,150);
+
+const data=derniereInscription;
+const photo=new Image();
+
+photo.onload=()=>{
+
+ctx.drawImage(photo,80,210,220,250);
+
+ctx.textAlign="left";
+ctx.fillStyle="#222";
+ctx.font="30px Arial";
+
+const lignes=[
+
+"Nom : "+data.nom,
+"Postnom : "+data.postnom,
+"Prénom : "+data.prenom,
+"Sexe : "+data.sexe,
+"Naissance : "+data.naissance,
+"Classe : "+data.classe,
+"Parent : "+data.parent,
+"Téléphone : "+data.telephone,
+"Adresse : "+data.adresse,
+"Année scolaire : 2026-2027"
+
+];
+
+lignes.forEach((ligne,index)=>{
+ctx.fillText(ligne,350,250+index*65);
+});
+
+ctx.font="27px Arial";
+
+ctx.fillText("Signature du parent : ______________________",80,1000);
+ctx.fillText("Signature de l'administration : ______________________",80,1100);
+
+ctx.textAlign="center";
+ctx.fillStyle="#064d2d";
+ctx.font="bold 28px Arial";
+
+ctx.fillText("Unis • Engagés • Avenir",width/2,1200);
+
+const lien=document.createElement("a");
+
+lien.download="Fiche-inscription-CS-LA-LUMIERE.jpg";
+lien.href=canvas.toDataURL("image/jpeg",.95);
+
+lien.click();
+
+};
+
+photo.src=data.photo;
+
+}
+
+/* WHATSAPP */
+
+function envoyerInscriptionWhatsApp(){
+
+const d=derniereInscription;
+
+if(!d.nom)return;
+
+const message=`
+
+DEMANDE D'INSCRIPTION - CS LA LUMIÈRE
+
+Nom : ${d.nom}
+Postnom : ${d.postnom}
+Prénom : ${d.prenom}
+Sexe : ${d.sexe}
+Date de naissance : ${d.naissance}
+Classe : ${d.classe}
+Parent : ${d.parent}
+Téléphone : ${d.telephone}
+Adresse : ${d.adresse}
+
+Année scolaire : 2026-2027
+
+`;
+
+window.open(
+"https://wa.me/243978644833?text="+encodeURIComponent(message),
+"_blank"
+);
+
+}
+
+/* CONSULTATION BULLETIN */
+
+document.getElementById("rechercheForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const matricule=document.getElementById("matriculeRecherche").value.trim().toUpperCase();
+
+const code=document.getElementById("codeRecherche").value.trim();
+
+const message=document.getElementById("messageRecherche");
+
+const zone=document.getElementById("bulletinResultat");
+
+const eleve=eleves.find(e=>
+e.matricule.toUpperCase()===matricule && e.code===code
+);
+
+zone.innerHTML="";
+message.classList.add("hidden");
+
+if(!eleve){
+
+message.textContent="Matricule ou code incorrect. Veuillez vérifier les informations.";
+message.classList.remove("hidden");
+
+return;
+
+}
+
+afficherBulletin(eleve);
+
+});
+
+/* AFFICHER BULLETIN */
+
+function afficherBulletin(eleve){
+
+const matieres=matieresParClasse[eleve.classe]||[];
+
+let totalObtenu=0;
+let totalMaximum=0;
+let lignes="";
+
+matieres.forEach(matiere=>{
+
+const note=Number(eleve.notes[matiere.nom]||0);
+const maximum=Number(matiere.max);
+
+totalObtenu+=note;
+totalMaximum+=maximum;
+
+lignes+=`
+
+<tr>
+<td>${escapeHTML(matiere.nom)}</td>
+<td>${note}</td>
+<td>${maximum}</td>
+</tr>
+
+`;
+
+});
+
+const pourcentage=totalMaximum?(totalObtenu/totalMaximum)*100:0;
+
+const decision=pourcentage>=50?"ADMIS":"ÉCHEC";
+
+const classeDecision=pourcentage>=50?"admis":"echec";
+
+const bulletin=document.createElement("div");
+
+bulletin.className="bulletin";
+
+bulletin.innerHTML=`
+
+<div class="bulletin-header">
+
+<img src="IMG-20261110-WA7472.jpg" alt="Logo école">
+
+<div style="text-align:center">
+<h2 style="color:#064d2d">CS LA LUMIÈRE</h2>
+<p>Kolwezi • Lualaba • RDC</p>
+<strong>ANNÉE SCOLAIRE 2026-2027</strong>
+</div>
+
+<div></div>
+
+</div>
+
+<h3>BULLETIN DE RÉSULTATS</h3>
+
+<div class="bulletin-student">
+
+<img src="${escapeHTML(eleve.photo)}"
+alt="Photo de l'élève"
+onerror="this.src='z.png'">
+
+<div>
+
+<p><strong>Nom :</strong> ${escapeHTML(eleve.nom)}</p>
+<p><strong>Postnom :</strong> ${escapeHTML(eleve.postnom)}</p>
+<p><strong>Prénom :</strong> ${escapeHTML(eleve.prenom)}</p>
+<p><strong>Matricule :</strong> ${escapeHTML(eleve.matricule)}</p>
+<p><strong>Classe :</strong> ${escapeHTML(eleve.classe)}</p>
+
+</div>
+</div>
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+<tr>
+<th>Matières</th>
+<th>Note obtenue</th>
+<th>Maximum</th>
+</tr>
+</thead>
+
+<tbody>${lignes}</tbody>
+
+<tfoot>
+<tr>
+<th>TOTAL</th>
+<th>${totalObtenu}</th>
+<th>${totalMaximum}</th>
+</tr>
+</tfoot>
+
+</table>
+</div>
+
+<div class="bulletin-summary">
+
+<div class="summary-box">
+Pourcentage
+<strong>${pourcentage.toFixed(2)} %</strong>
+</div>
+
+<div class="summary-box">
+Total obtenu
+<strong>${totalObtenu}/${totalMaximum}</strong>
+</div>
+
+<div class="summary-box">
+Décision
+<strong><span class="badge ${classeDecision}">${decision}</span></strong>
+</div>
+
+</div>
+
+<p style="margin-top:20px;text-align:center">
+<strong>CS LA LUMIÈRE — Unis • Engagés • Avenir</strong>
+</p>
+
+<button type="button" class="btn btn-green no-print"
+onclick="imprimerBulletin()">
+🖨️ Imprimer le bulletin
+</button>
+
+`;
+
+document.getElementById("bulletinResultat").appendChild(bulletin);
+
+}
+
+/* IMPRESSION DU BULLETIN UNIQUEMENT */
+
+function imprimerBulletin(){
+
+const bulletin=document.querySelector(
+"#bulletinResultat .bulletin"
+);
+
+if(!bulletin){
+
+alert("Aucun bulletin disponible.");
+return;
+
+}
+
+window.print();
+
+}
+
+</script>
+
+</body>
+</html>
